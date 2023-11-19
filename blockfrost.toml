@@ -1,0 +1,2 @@
+project_id = <Add Blockfrost Project Id Here>
+cardano_network = "https://cardano-mainnet.blockfrost.io/api/v0"
