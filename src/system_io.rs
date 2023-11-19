@@ -67,7 +67,11 @@ pub mod system_io {
             .cloned()
             .collect();
 
-        println!("Books to write: {}", books_to_write.len());
+        println!(
+            "Saving {} covers to directory {}",
+            books_to_write.len(),
+            output_dir
+        );
         Ok(books_to_write)
     }
 }
