@@ -10,7 +10,11 @@ pub mod blockfrost_adapter {
 
     pub async fn get_asset_ids(policy_id: &str) -> Result<Vec<String>, ErrorWrapper> {
         let assets = init_blockfrost()?.assets_policy_by_id(policy_id).await?;
-        let asset_ids: Vec<String> = assets.into_iter().map(|x| x.asset).collect();
+        let asset_ids: Vec<String> = assets
+            .into_iter()
+            .map(|x| x.asset)
+            .filter(|asset_id| asset_id != policy_id)
+            .collect();
         Ok(asset_ids)
     }
 

@@ -23,7 +23,7 @@ pub mod utils {
         let client = reqwest::Client::new();
         let bytes = client
             .get(url)
-            .timeout(Duration::from_secs(100))
+            .timeout(Duration::from_secs(200))
             .send()
             .await?
             .bytes()
